@@ -1,0 +1,13 @@
+{
+    "bucketName": "booth36e1d9234676048918259805cfd637ee8",
+    "authPolicyName": "s3_amplify_bfbe2308",
+    "unauthPolicyName": "s3_amplify_bfbe2308",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authPermissions": "rw",
+    "unauthPermissions": "rw"
+}
