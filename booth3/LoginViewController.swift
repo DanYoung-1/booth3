@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
         
         if (!isValidEmail(email: emailTextField.text!)) {
             emailTextField.text = "invalid email"
+            return
         }
         
         let email = emailTextField!.text!
@@ -24,9 +25,9 @@ class LoginViewController: UIViewController {
             try nm.postUser(with: email, callback: { user in
                 UserDefaults.standard.set(try! PropertyListEncoder().encode(user), forKey: kUserDefaultsKey)
                 DispatchQueue.main.async {
-                    let uvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UploadViewController") as! UploadViewController
+                    let cvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CameraViewController") as! CameraViewController
 
-                    self.present(uvc, animated: false, completion: nil)
+                    self.present(cvc, animated: false, completion: nil)
                 }
             })
         } catch {

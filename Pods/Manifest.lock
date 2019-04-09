@@ -11,10 +11,25 @@ PODS:
     - AWSCognitoIdentityProvider (= 2.8.4)
   - AWSS3 (2.8.4):
     - AWSCore (= 2.8.4)
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - FBSDKCoreKit (4.40.0):
+    - Bolts (~> 1.9)
+  - FBSDKLoginKit (4.40.0):
+    - FBSDKCoreKit
+  - Spring (1.0.6)
+  - SwiftyCam (3.1.0)
 
 DEPENDENCIES:
   - AWSMobileClient (~> 2.8.0)
   - AWSS3 (~> 2.8.0)
+  - FBSDKLoginKit
+  - Spring (from `https://github.com/MengTo/Spring.git`)
+  - SwiftyCam
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -24,6 +39,19 @@ SPEC REPOS:
     - AWSCore
     - AWSMobileClient
     - AWSS3
+    - Bolts
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - SwiftyCam
+
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: fafd0b2e8d4d46405bd86fa7ba84bb7f73a20b13
+    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   AWSAuthCore: ac2536f54f73a2914c236e266cbec02a49f57d69
@@ -32,7 +60,12 @@ SPEC CHECKSUMS:
   AWSCore: 734b0d67c2c77f6edae9e5520431a37310ea4193
   AWSMobileClient: 59072ca49e82706c6d958f7a08e4a285d7197af1
   AWSS3: ead679e0887fa3ca8dddd054643a197b55360f1f
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
+  FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
+  SwiftyCam: ffe3adb6a2bae2bbfb7c213b6ac5a6f69d9893ac
 
-PODFILE CHECKSUM: 9b912c190a2eb0a95b60a2f8c6d153be5b8142ff
+PODFILE CHECKSUM: 80f1b69f3eec6f6ed9d5f4a4853161e7dfaa65a0
 
 COCOAPODS: 1.5.3

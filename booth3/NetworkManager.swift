@@ -22,7 +22,13 @@ class NetworkManager{
         case decodeError
     }
     
-    let host = "http://localhost:8080"
+    #if targetEnvironment(simulator)
+    let host = "http://localhost:8077"
+    #else
+    let host = "http://macbookpro.local:8077"
+    #endif
+    // https://booth.v2.vapor.cloud
+    
     
     func postUser(with email: String,  callback: @escaping (User) -> Void) throws  {
         let parameters = ["email": email]
@@ -40,7 +46,7 @@ class NetworkManager{
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-            guard error == nil else { return }
+            guard error == nil else { return } 
             guard let data = data else { return }
             do {
                 guard let user = try? JSONDecoder().decode(User.self, from: data) else { throw NMError.decodeError }

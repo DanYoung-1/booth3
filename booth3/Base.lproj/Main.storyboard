@@ -12,7 +12,7 @@
         <!--Upload-->
         <scene sceneID="8aH-Ni-x2y">
             <objects>
-                <viewController storyboardIdentifier="UploadViewController" id="8KZ-4a-ylr" customClass="UploadViewController" customModule="S3TransferUtilitySampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UploadViewController" id="8KZ-4a-ylr" customClass="UploadViewController" customModule="booth3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="caQ-Ed-0dn"/>
                         <viewControllerLayoutGuide type="bottom" id="YrN-PJ-HBs"/>
@@ -34,8 +34,11 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qn8-uT-9Nh">
                                 <rect key="frame" x="16" y="89" width="343" height="2"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJu-7O-93X">
-                                <rect key="frame" x="16" y="111" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJu-7O-93X">
+                                <rect key="frame" x="16" y="111" width="343" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="Hym-3h-kXU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -63,12 +66,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYM-nr-w1v" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1788" y="-392"/>
+            <point key="canvasLocation" x="1798" y="-27"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="bJa-aK-qQ0">
             <objects>
-                <viewController id="9Wg-xF-XlF" customClass="LoginViewController" customModule="booth2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9Wg-xF-XlF" customClass="LoginViewController" customModule="booth3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pQ8-Ig-m3m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,6 +132,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbX-2Q-9KA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="991.20000000000005" y="-391.75412293853077"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="r2A-It-4Mw">
+            <objects>
+                <viewController storyboardIdentifier="CameraViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i7N-0H-R35" customClass="CameraViewController" customModule="booth3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hw7-Y4-ah3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ELn-ea-39i" customClass="SwiftyCamButton" customModule="SwiftyCam">
+                                <rect key="frame" x="67" y="112" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="cameraButton:" destination="i7N-0H-R35" eventType="valueChanged" id="kN0-af-uei"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AAM-L1-fRh"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonRect" destination="ELn-ea-39i" id="COx-n5-Z6Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pw5-go-gTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1798" y="-720"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Ge-8D-67i">

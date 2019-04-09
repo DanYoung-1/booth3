@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		219672A1224C30E3009D775C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219672A0224C30E3009D775C /* AppDelegate.swift */; };
-		219672A3224C30E3009D775C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219672A2224C30E3009D775C /* ViewController.swift */; };
 		219672A6224C30E3009D775C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 219672A4224C30E3009D775C /* Main.storyboard */; };
 		219672A8224C30E5009D775C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 219672A7224C30E5009D775C /* Assets.xcassets */; };
 		219672AB224C30E5009D775C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 219672A9224C30E5009D775C /* LaunchScreen.storyboard */; };
@@ -18,13 +17,13 @@
 		219672C1224C36AB009D775C /* PhotoStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219672BC224C36AB009D775C /* PhotoStack.swift */; };
 		219672C2224C36AB009D775C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219672BD224C36AB009D775C /* User.swift */; };
 		219672C4224C36E1009D775C /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219672C3224C36E1009D775C /* UploadViewController.swift */; };
+		2196874E2252FB9D009D775C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2196874D2252FB9D009D775C /* CameraViewController.swift */; };
 		7C2FADA259C9E730D010D3F6 /* Pods_booth3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C7DBA69467CD6C44181F30 /* Pods_booth3.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2196729D224C30E3009D775C /* booth3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = booth3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		219672A0224C30E3009D775C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		219672A2224C30E3009D775C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		219672A5224C30E3009D775C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		219672A7224C30E5009D775C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		219672AA224C30E5009D775C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +34,7 @@
 		219672BC224C36AB009D775C /* PhotoStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStack.swift; sourceTree = "<group>"; };
 		219672BD224C36AB009D775C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		219672C3224C36E1009D775C /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		2196874D2252FB9D009D775C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A03E29295C986C386C475CE2 /* Pods-booth3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-booth3.release.xcconfig"; path = "Pods/Target Support Files/Pods-booth3/Pods-booth3.release.xcconfig"; sourceTree = "<group>"; };
 		A8C7DBA69467CD6C44181F30 /* Pods_booth3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_booth3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F01B9415D87ED8AC5A096B /* Pods-booth3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-booth3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-booth3/Pods-booth3.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,8 +78,8 @@
 				219672BB224C36AB009D775C /* Model */,
 				219672B8224C36AB009D775C /* NetworkManager.swift */,
 				219672A0224C30E3009D775C /* AppDelegate.swift */,
+				2196874D2252FB9D009D775C /* CameraViewController.swift */,
 				219672C3224C36E1009D775C /* UploadViewController.swift */,
-				219672A2224C30E3009D775C /* ViewController.swift */,
 				219672A4224C30E3009D775C /* Main.storyboard */,
 				219672A7224C30E5009D775C /* Assets.xcassets */,
 				219672A9224C30E5009D775C /* LaunchScreen.storyboard */,
@@ -199,6 +199,11 @@
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyCam/SwiftyCam.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -210,6 +215,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyCam.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -247,9 +257,9 @@
 			files = (
 				219672C0224C36AB009D775C /* LoginViewController.swift in Sources */,
 				219672C4224C36E1009D775C /* UploadViewController.swift in Sources */,
-				219672A3224C30E3009D775C /* ViewController.swift in Sources */,
 				219672C1224C36AB009D775C /* PhotoStack.swift in Sources */,
 				219672BE224C36AB009D775C /* NetworkManager.swift in Sources */,
+				2196874E2252FB9D009D775C /* CameraViewController.swift in Sources */,
 				219672C2224C36AB009D775C /* User.swift in Sources */,
 				219672A1224C30E3009D775C /* AppDelegate.swift in Sources */,
 			);
@@ -332,6 +342,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -386,6 +397,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

@@ -1,23 +1,40 @@
 import UIKit
 import AWSS3
 
-class UploadViewController: UIViewController, UINavigationControllerDelegate {
+public struct ImageInfo {
+    let image: UIImage
+    var uploadKey: String = ""
+    var url: String = ""
+    
+    init(image: UIImage) {
+        self.image = image
+    }
+}
 
+class UploadViewController: UIViewController, UINavigationControllerDelegate {
+    
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var statusLabel: UILabel!
 
-    let bucketHost = "https://s3.amazonaws.com/booth36e1d9234676048918259805cfd637ee8-dev/"
+    let bucketHost = "https://s3-us-west-2.amazonaws.com/booth36e1d9234676048918259805cfd637ee8-dev/"
     var completionHandler: AWSS3TransferUtilityUploadCompletionHandlerBlock?
     var progressBlock: AWSS3TransferUtilityProgressBlock?
     
     let imagePicker = UIImagePickerController()
     let transferUtility = AWSS3TransferUtility.default()
+
+    var imagesInfo = [ImageInfo]()
     
     let nm = NetworkManager.sharedInstance
+    var nUploadSuccesses = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        for (i, _) in imagesInfo.enumerated() {
+            imagesInfo[i].uploadKey = "public/\(userID)/\(UUID()).jpeg"
+            imagesInfo[i].url = bucketHost + imagesInfo[i].uploadKey
+        }
         
         progressView.progress = 0.0;
         statusLabel.text = "Ready"
@@ -42,14 +59,14 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
                     NSLog("Error: Failed - Likely due to invalid region / filename")
                 }
                 else {
-                    self.statusLabel.text = "Success"
+                    self.nUploadSuccesses += 1
+                    if self.nUploadSuccesses < self.imagesInfo.count { return }
                     
-                    let key = self.uploadKeyForImage
-                    let url = self.bucketHost + key
-                    let ps = PhotoStack(id: nil, urls: [url], userID: self.userID)
+                    let urls = self.imagesInfo.map { $0.url }
+                    let ps = PhotoStack(id: nil, urls: urls, userID: self.userID)
                     do {
                         try self.nm.postPhotoStack(photoStack: ps, callback: { photoStack in
-                            print("photo stack uploaded ---- \n\n")
+                            self.nUploadSuccesses = 0
                         })
                     } catch {
                         print(error)
@@ -60,13 +77,10 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
     }
 
     @IBAction func selectAndUpload(_ sender: UIButton) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-        
-        present(imagePicker, animated: true, completion: nil)
+        self.uploadImages()
     }
     
-    func uploadImage(with data: Data, key: String) {
+    func uploadImages() {
         let expression = AWSS3TransferUtilityUploadExpression()
         expression.progressBlock = progressBlock
 
@@ -74,37 +88,36 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
             self.statusLabel.text = ""
             self.progressView.progress = 0
         }
-        
-        transferUtility.uploadData(
-            data,
-            key: uploadKeyForImage,
-            contentType: "image/jpeg",
-            expression: expression,
-            completionHandler: completionHandler).continueWith { (task) -> AnyObject? in
-                if let error = task.error {
-                    print("Error: \(error.localizedDescription)")
-                    
-                    DispatchQueue.main.async {
-                        self.statusLabel.text = "Failed"
+    
+        for imageInfo in imagesInfo {
+            guard let data = imageInfo.image.jpegData(compressionQuality: 1) else { return }
+            
+            transferUtility.uploadData(
+                data,
+                key: imageInfo.uploadKey,
+                contentType: "image/jpeg",
+                expression: expression,
+                completionHandler: completionHandler).continueWith { (task) -> AnyObject? in
+                    if let error = task.error {
+                        print("Error: \(error.localizedDescription)")
+                        
+                        DispatchQueue.main.async {
+                            self.statusLabel.text = "Failed"
+                        }
                     }
-                }
-                if let _ = task.result {
-                    DispatchQueue.main.async {
-                        self.statusLabel.text = "Uploading..."
-                        print("Upload Starting!")
+                    if let _ = task.result {
+                        DispatchQueue.main.async {
+                            self.statusLabel.text = "Uploading..."
+                            print("Upload Starting!")
+                        }
                     }
-                }
-                return nil;
+                    return nil;
+            }
         }
     }
 }
 
 extension UploadViewController {
-    var uploadKeyForImage: String {
-        get {
-            return "public/\(userID)/\(UUID()).jpeg"      // PublicORPrivate / UserID / UUID .filetype
-        }
-    }
     var userID: Int {
         get {
             let storedObject: Data = UserDefaults.standard.object(forKey: kUserDefaultsKey) as! Data
@@ -116,10 +129,10 @@ extension UploadViewController {
 }
 
 extension UploadViewController: UIImagePickerControllerDelegate {
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    @objc public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if "public.image" == info[.mediaType] as? String {
             let image: UIImage = info[.originalImage] as! UIImage
-        self.uploadImage(with: image.jpegData(compressionQuality: 1)!, key: uploadKeyForImage)
+            
         }
         dismiss(animated: true, completion: nil)
     }
