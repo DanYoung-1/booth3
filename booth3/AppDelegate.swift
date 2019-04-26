@@ -3,8 +3,6 @@
 import UIKit
 import AWSS3
 import AWSMobileClient
-import FBSDKCoreKit
-import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

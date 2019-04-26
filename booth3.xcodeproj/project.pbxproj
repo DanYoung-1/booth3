@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21124CE122615D8A00472348 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21124CE022615D8A00472348 /* UIImage+Extensions.swift */; };
+		21124CE322615DAE00472348 /* NSLayoutConstraints+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21124CE222615DAE00472348 /* NSLayoutConstraints+Extensions.swift */; };
+		21124CE522615DF600472348 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21124CE422615DF600472348 /* UIView+Extensions.swift */; };
+		217D89DF2272D6B50086B2AE /* hellobooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 217D89DE2272D6B50086B2AE /* hellobooth.png */; };
+		217D89E12272D6BD0086B2AE /* hellobooth-iconMain.png in Resources */ = {isa = PBXBuildFile; fileRef = 217D89E02272D6BD0086B2AE /* hellobooth-iconMain.png */; };
+		217D89E32272DAB00086B2AE /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217D89E22272DAAF0086B2AE /* Video.swift */; };
 		219672A1224C30E3009D775C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219672A0224C30E3009D775C /* AppDelegate.swift */; };
 		219672A6224C30E3009D775C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 219672A4224C30E3009D775C /* Main.storyboard */; };
 		219672A8224C30E5009D775C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 219672A7224C30E5009D775C /* Assets.xcassets */; };
@@ -18,10 +24,17 @@
 		219672C2224C36AB009D775C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219672BD224C36AB009D775C /* User.swift */; };
 		219672C4224C36E1009D775C /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219672C3224C36E1009D775C /* UploadViewController.swift */; };
 		2196874E2252FB9D009D775C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2196874D2252FB9D009D775C /* CameraViewController.swift */; };
+		21CD3A62226994890074EDBC /* VideoFromImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CD3A61226994890074EDBC /* VideoFromImages.swift */; };
 		7C2FADA259C9E730D010D3F6 /* Pods_booth3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C7DBA69467CD6C44181F30 /* Pods_booth3.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21124CE022615D8A00472348 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		21124CE222615DAE00472348 /* NSLayoutConstraints+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraints+Extensions.swift"; sourceTree = "<group>"; };
+		21124CE422615DF600472348 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		217D89DE2272D6B50086B2AE /* hellobooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hellobooth.png; sourceTree = "<group>"; };
+		217D89E02272D6BD0086B2AE /* hellobooth-iconMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hellobooth-iconMain.png"; sourceTree = "<group>"; };
+		217D89E22272DAAF0086B2AE /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		2196729D224C30E3009D775C /* booth3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = booth3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		219672A0224C30E3009D775C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		219672A5224C30E3009D775C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,6 +48,7 @@
 		219672BD224C36AB009D775C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		219672C3224C36E1009D775C /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		2196874D2252FB9D009D775C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		21CD3A61226994890074EDBC /* VideoFromImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFromImages.swift; sourceTree = "<group>"; };
 		A03E29295C986C386C475CE2 /* Pods-booth3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-booth3.release.xcconfig"; path = "Pods/Target Support Files/Pods-booth3/Pods-booth3.release.xcconfig"; sourceTree = "<group>"; };
 		A8C7DBA69467CD6C44181F30 /* Pods_booth3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_booth3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F01B9415D87ED8AC5A096B /* Pods-booth3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-booth3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-booth3/Pods-booth3.debug.xcconfig"; sourceTree = "<group>"; };
@@ -52,6 +66,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21124CB5225C856C00472348 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				219672BA224C36AB009D775C /* LoginViewController.swift */,
+				2196874D2252FB9D009D775C /* CameraViewController.swift */,
+				219672C3224C36E1009D775C /* UploadViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		21124CB6225C857E00472348 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		21124CDF22615D7B00472348 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				21124CE022615D8A00472348 /* UIImage+Extensions.swift */,
+				21124CE422615DF600472348 /* UIView+Extensions.swift */,
+				21124CE222615DAE00472348 /* NSLayoutConstraints+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2132F81822737D3C00F3AC5E /* Processes */ = {
+			isa = PBXGroup;
+			children = (
+				21CD3A61226994890074EDBC /* VideoFromImages.swift */,
+			);
+			path = Processes;
+			sourceTree = "<group>";
+		};
+		2132F81922737D4B00F3AC5E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				217D89DE2272D6B50086B2AE /* hellobooth.png */,
+				217D89E02272D6BD0086B2AE /* hellobooth-iconMain.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		21967294224C30E3009D775C = {
 			isa = PBXGroup;
 			children = (
@@ -74,27 +132,30 @@
 		2196729F224C30E3009D775C /* booth3 */ = {
 			isa = PBXGroup;
 			children = (
-				219672BA224C36AB009D775C /* LoginViewController.swift */,
-				219672BB224C36AB009D775C /* Model */,
+				219672BB224C36AB009D775C /* Models */,
+				21124CB6225C857E00472348 /* Views */,
+				21124CB5225C856C00472348 /* ViewControllers */,
+				2132F81822737D3C00F3AC5E /* Processes */,
+				21124CDF22615D7B00472348 /* Extensions */,
 				219672B8224C36AB009D775C /* NetworkManager.swift */,
 				219672A0224C30E3009D775C /* AppDelegate.swift */,
-				2196874D2252FB9D009D775C /* CameraViewController.swift */,
-				219672C3224C36E1009D775C /* UploadViewController.swift */,
-				219672A4224C30E3009D775C /* Main.storyboard */,
 				219672A7224C30E5009D775C /* Assets.xcassets */,
+				2132F81922737D4B00F3AC5E /* Images */,
+				219672A4224C30E3009D775C /* Main.storyboard */,
 				219672A9224C30E5009D775C /* LaunchScreen.storyboard */,
 				219672AC224C30E5009D775C /* Info.plist */,
 			);
 			path = booth3;
 			sourceTree = "<group>";
 		};
-		219672BB224C36AB009D775C /* Model */ = {
+		219672BB224C36AB009D775C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				219672BC224C36AB009D775C /* PhotoStack.swift */,
+				217D89E22272DAAF0086B2AE /* Video.swift */,
 				219672BD224C36AB009D775C /* User.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6D98F7154D0B42179E4E8333 /* Pods */ = {
@@ -178,6 +239,8 @@
 				219672AB224C30E5009D775C /* LaunchScreen.storyboard in Resources */,
 				219672A8224C30E5009D775C /* Assets.xcassets in Resources */,
 				219672A6224C30E3009D775C /* Main.storyboard in Resources */,
+				217D89E12272D6BD0086B2AE /* hellobooth-iconMain.png in Resources */,
+				217D89DF2272D6B50086B2AE /* hellobooth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,10 +262,6 @@
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyCam/SwiftyCam.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -215,10 +274,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyCam.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,12 +310,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217D89E32272DAB00086B2AE /* Video.swift in Sources */,
 				219672C0224C36AB009D775C /* LoginViewController.swift in Sources */,
 				219672C4224C36E1009D775C /* UploadViewController.swift in Sources */,
+				21124CE122615D8A00472348 /* UIImage+Extensions.swift in Sources */,
+				21124CE522615DF600472348 /* UIView+Extensions.swift in Sources */,
+				21CD3A62226994890074EDBC /* VideoFromImages.swift in Sources */,
 				219672C1224C36AB009D775C /* PhotoStack.swift in Sources */,
 				219672BE224C36AB009D775C /* NetworkManager.swift in Sources */,
 				2196874E2252FB9D009D775C /* CameraViewController.swift in Sources */,
 				219672C2224C36AB009D775C /* User.swift in Sources */,
+				21124CE322615DAE00472348 /* NSLayoutConstraints+Extensions.swift in Sources */,
 				219672A1224C30E3009D775C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

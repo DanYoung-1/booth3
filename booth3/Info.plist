@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSCameraUsageDescription</key>
-    <string>To Take Photos and Video</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>To Record Audio With Video</string>
+	<key>NSCameraUsageDescription</key>
+	<string>To Take Photos and Video</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>To Record Audio With Video</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -54,6 +54,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>ok</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -102,25 +104,25 @@
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Give permission to let the app get access to the images from the Photo Library</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb574557376360742</string>
-            </array>
-        </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>574557376360742</string>
-    <key>FacebookDisplayName</key>
-    <string>booth1</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-share-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb574557376360742</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>574557376360742</string>
+	<key>FacebookDisplayName</key>
+	<string>booth1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 </dict>
 </plist>
