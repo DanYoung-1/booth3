@@ -25,14 +25,15 @@ class NetworkManager{
     #if targetEnvironment(simulator)
     let host = "http://localhost:8077"
     #else
-    let host = "http://macbookpro.local:8077"
+    let host = "http://3.14.163.252:8080"
     #endif
     // http://macbookpro.local:8077
     // https://booth.v2.vapor.cloud
+    // http://3.14.163.252:8080
     
     func postUser(with email: String,  callback: @escaping (User) -> Void) throws  {
         let parameters = ["email": email]
-        let url = URL(string: "\(host)/users")!
+        let url = URL(string: "\(host)/user")!
         let session = URLSession.shared
         
         var request = URLRequest(url: url)

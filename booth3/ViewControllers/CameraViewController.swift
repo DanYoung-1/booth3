@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyCam
-
+import Foundation
 
 class CameraViewController: SwiftyCamViewController, SwiftyCamViewControllerDelegate {
     
@@ -24,6 +24,7 @@ class CameraViewController: SwiftyCamViewController, SwiftyCamViewControllerDele
         super.viewDidLoad()
         defaultCamera = .front
         doubleTapCameraSwitch = false
+        shouldUseDeviceOrientation = true
         pinchToZoom = false
         let captureButton = SwiftyCamButton(frame: promptLabel.frame)
         captureButton.delegate = self
@@ -55,20 +56,24 @@ class CameraViewController: SwiftyCamViewController, SwiftyCamViewControllerDele
     
     func startCountDown() {
         var count = 3
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            if count > 0 {
-                self.promptLabel.text = "\(count)"
-                self.promptLabel.alpha = 1.0
-                UIView.animate(withDuration: 1.0) {
-                    self.promptLabel.alpha = 0.0
+        if #available(iOS 10.0, *) {
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                if count > 0 {
+                    self.promptLabel.text = "\(count)"
+                    self.promptLabel.alpha = 1.0
+                    UIView.animate(withDuration: 1.0) {
+                        self.promptLabel.alpha = 0.0
+                    }
+                    count -= 1
+                } else {
+                    self.currentPhotoCount += 1
+                    timer.invalidate()
+                    self.flashScreen()
+                    self.takePhoto()
                 }
-                count -= 1
-            } else {
-                self.currentPhotoCount += 1
-                timer.invalidate()
-                self.flashScreen()
-                self.takePhoto()
             }
+        } else {
+            
         }
     }
     

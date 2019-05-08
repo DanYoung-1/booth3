@@ -1,6 +1,5 @@
 import UIKit
 import AWSS3
-import SwiftVideoGenerator
 
 public struct ImageInfo {
     var image: UIImage
@@ -22,7 +21,6 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet weak var uploadVideoButton: UIButton!
 
-    
     @IBAction func selectAndUpload(_ sender: UIButton) {
         self.uploadImages()
     }
@@ -49,6 +47,8 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
     var imagesInfo = [ImageInfo]()
     var videoInfo = VideoInfo()
     var videoFileURL: URL? = nil
+    
+    var bottomImageView: UIImageView?
     
     let nm = NetworkManager.sharedInstance
     var nUploadSuccesses = 0 // refactor using S3 Library
@@ -113,7 +113,10 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
             imagesInfo[i].uploadKey = "public/\(userID)/\(UUID()).jpeg"
             imagesInfo[i].url = bucketHost + imagesInfo[i].uploadKey
         }
-        
+        let image = imagesInfo[0].image
+        bottomImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: image.size.width, height: 120.0))
+    
+            
         progressView.progress = 0.0;
         statusLabel.text = "Ready"
 
@@ -131,8 +134,10 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
     
     func applyLogoImage() {
         let icon = UIImage(named: "hellobooth.png")!
-        for (i, _) in imagesInfo.enumerated() {
-            imagesInfo[i].image = imagesInfo[i].image.overlayWith(image: icon, posX: 520, posY: 1130) // need bottom edge view
+        for (i, _) in imagesInfo.enumerated() { // member mutable
+            let imageInfo = imagesInfo[i]
+            let y = imageInfo.image.size.height - 120
+            imagesInfo[i].image = imageInfo.image.overlayWith(image: icon, posX: 0, posY: y)
         }
     }
     
