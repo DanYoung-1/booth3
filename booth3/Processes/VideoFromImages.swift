@@ -1,12 +1,3 @@
-//
-//  VideoFromImages.swift
-//
-//  Created by Alf Nielsen 29/11/2015
-//  Copyright (c) 2015 Alf Nielsen. All rights reserved.
-//
-//  Base code comes from:
-//  https://github.com/justinlevi/imagesToVideo/tree/master
-
 import AVFoundation
 import UIKit
 import AssetsLibrary
