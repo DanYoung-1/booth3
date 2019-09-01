@@ -36,7 +36,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate {
         applyLogoImage()
     }
 
-    let bucketHost = "https://s3-us-west-2.amazonaws.com/booth36e1d9234676048918259805cfd637ee8-dev/"
+    let bucketHost = "x"
     var imageCompletionHandler: AWSS3TransferUtilityUploadCompletionHandlerBlock?
     var videoCompletionHandler: AWSS3TransferUtilityUploadCompletionHandlerBlock?
     var progressBlock: AWSS3TransferUtilityProgressBlock?
